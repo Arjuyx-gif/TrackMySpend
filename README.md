@@ -1,13 +1,2 @@
 # TrackMySpend
-This is a simple Finance Management App made with Flutter.
-The app helps to track daily expenses, manage budgets, and see spending in different categories.
-
-I built this project while learning Flutter, and it covers:
-
--Adding and viewing expenses
-
--Categorizing spending
-
--Simple charts and clean UI
-
-This is my beginner project to practice Flutter and improve my app development skills.
+This project is a beginner-friendly Finance Management App UI designed using Flutter, crafted to help users visualize and track their financial activities through a clean, modern interface. With intuitive expense entry, budget categorization, and interactive chart displays, the app aims to provide a seamless and visually engaging way for users to manage their spending and understand their financial habits—all while serving as a foundational learning exercise in Flutter UI design.
