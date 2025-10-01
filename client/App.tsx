@@ -15,6 +15,7 @@ import LoginPage from "./pages/auth/Login";
 import { Layout } from "@/components/layout/Layout";
 import { I18nProvider } from "@/providers/I18n";
 import { AuthProvider } from "@/providers/Auth";
+import SignupPage from "./pages/auth/Signup";
 
 const queryClient = new QueryClient();
 
