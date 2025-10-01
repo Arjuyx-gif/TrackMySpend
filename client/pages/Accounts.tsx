@@ -30,7 +30,7 @@ export default function AccountsPage() {
       <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold">{t("accounts")}</h1>
-          <p className="text-muted-foreground text-sm">{t("totalBalance")}: {total.toLocaleString(undefined, { style: "currency", currency: "USD" })}</p>
+          <p className="text-muted-foreground text-sm">{t("totalBalance")}: {total.toLocaleString("en-IN", { style: "currency", currency: "INR" })}</p>
         </div>
         <div className="bg-card border p-4 rounded-md w-full md:w-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
@@ -58,7 +58,7 @@ export default function AccountsPage() {
           <div key={a.id} className="bg-card border rounded-md p-4">
             <div className="font-semibold">{a.name}</div>
             <div className={`text-sm mt-1 ${a.balance < 0 ? "text-destructive" : "text-emerald-600 dark:text-emerald-400"}`}>
-              {a.balance.toLocaleString(undefined, { style: "currency", currency: "USD" })}
+              {a.balance.toLocaleString("en-IN", { style: "currency", currency: "INR" })}
             </div>
             <div className="text-xs text-muted-foreground mt-1">{a.type}{a.institution ? ` • ${a.institution}` : ""}</div>
           </div>
@@ -84,7 +84,7 @@ export default function AccountsPage() {
                   <td className="py-2 pr-2">{t.payee}</td>
                   <td className="py-2 pr-2">{t.category}</td>
                   <td className={`py-2 pl-2 text-right ${t.amount < 0 ? "text-destructive" : "text-emerald-600 dark:text-emerald-400"}`}>
-                    {t.amount.toLocaleString(undefined, { style: "currency", currency: "USD" })}
+                    {t.amount.toLocaleString("en-IN", { style: "currency", currency: "INR" })}
                   </td>
                 </tr>
               ))}
