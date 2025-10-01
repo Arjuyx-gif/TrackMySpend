@@ -22,14 +22,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return stored ? (JSON.parse(stored) as User) : null;
   });
 
-  const login = async (email: string, _password: string) => {
-    const u = { id: "u1", name: email.split("@")[0], email };
+  const login = async (email: string, password: string) => {
+    // Simple client-side validation and demo account support.
+    // Demo credentials: username 'demo' with password 'demo' OR 'demo@example.com' / 'demo'
+    const isDemo = (email === "demo" || email === "demo@example.com") && password === "demo";
+    const looksLikeEmail = /@/.test(email);
+    if (!isDemo && (!looksLikeEmail || password.length < 6)) {
+      // Reject invalid credentials
+      throw new Error("Invalid credentials");
+    }
+
+    const u = { id: isDemo ? "demo" : Math.random().toString(36).slice(2), name: (isDemo ? "Demo User" : email.split("@")[0]), email };
     setUser(u);
     localStorage.setItem("user", JSON.stringify(u));
   };
 
-  const signup = async (name: string, email: string, _password: string) => {
-    const u = { id: "u1", name, email };
+  const signup = async (name: string, email: string, password: string) => {
+    if (!/@/.test(email) || password.length < 6) throw new Error("Invalid signup");
+    const u = { id: Math.random().toString(36).slice(2), name, email };
     setUser(u);
     localStorage.setItem("user", JSON.stringify(u));
   };
