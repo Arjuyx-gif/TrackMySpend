@@ -59,7 +59,7 @@ export default function Index() {
                 </defs>
                 <XAxis dataKey="name" tickLine={false} axisLine={false} />
                 <YAxis tickLine={false} axisLine={false} hide width={0} />
-                <Tooltip formatter={(v: number) => v.toLocaleString(undefined, { style: "currency", currency: "USD" })} />
+                <Tooltip formatter={(v: number) => v.toLocaleString("en-IN", { style: "currency", currency: "INR" })} />
                 <Area type="monotone" dataKey="income" stroke="#22c55e" fill="url(#inc)" />
                 <Area type="monotone" dataKey="spend" stroke="#ef4444" fill="url(#spend)" />
               </AreaChart>
@@ -73,7 +73,7 @@ export default function Index() {
               <li key={a.id} className="flex items-center justify-between">
                 <span className="truncate">{a.name}</span>
                 <span className={`text-sm ${a.balance < 0 ? "text-destructive" : "text-emerald-600 dark:text-emerald-400"}`}>
-                  {a.balance.toLocaleString(undefined, { style: "currency", currency: "USD" })}
+                  {a.balance.toLocaleString("en-IN", { style: "currency", currency: "INR" })}
                 </span>
               </li>
             ))}
@@ -89,7 +89,7 @@ function CardStat({ label, value, positive }: { label: string; value: number; po
   return (
     <div className="bg-card border rounded-md p-4">
       <div className="text-xs text-muted-foreground">{label}</div>
-      <div className={`text-2xl font-semibold mt-1 ${color}`}>{value.toLocaleString(undefined, { style: "currency", currency: "USD" })}</div>
+      <div className={`text-2xl font-semibold mt-1 ${color}`}>{value.toLocaleString("en-IN", { style: "currency", currency: "INR" })}</div>
     </div>
   );
 }
