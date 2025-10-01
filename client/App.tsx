@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import AccountsPage from "./pages/Accounts";
 import Placeholder from "./pages/Placeholder";
 import AuthPage from "./pages/auth";
+import LoginPage from "./pages/auth/Login";
 import { Layout } from "@/components/layout/Layout";
 import { I18nProvider } from "@/providers/I18n";
 import { AuthProvider } from "@/providers/Auth";
