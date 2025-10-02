@@ -8,6 +8,8 @@ export default function LoginPage() {
   const { t } = useI18n();
   const { login, demoLogin } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = (location.state as any)?.from?.pathname || "/";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
