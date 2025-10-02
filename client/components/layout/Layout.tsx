@@ -8,7 +8,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <aside className="hidden lg:block border-r"><Sidebar /></aside>
       <div className="flex flex-col min-w-0">
         <div className="lg:hidden border-b"><Topbar /></div>
-        <main className="p-4 md:p-6 lg:p-8 max-w-[120rem] w-full mx-auto">{children}</main>
+        <main className="font-normal max-w-[1920px] w-full mx-auto p-6">{children}</main>
       </div>
     </div>
   );
