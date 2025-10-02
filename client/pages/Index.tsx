@@ -26,7 +26,7 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-normal">
       <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold">{t("welcome")}</h1>
