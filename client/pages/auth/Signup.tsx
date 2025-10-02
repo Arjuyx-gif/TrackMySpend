@@ -33,7 +33,7 @@ export default function SignupPage() {
     setLoading(true);
     try {
       await signup(name.trim(), email.trim(), password);
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (err: any) {
       setError(err?.message || "Signup failed");
     } finally {
