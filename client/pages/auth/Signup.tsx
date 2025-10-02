@@ -8,6 +8,8 @@ export default function SignupPage() {
   const { t } = useI18n();
   const { signup } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = (location.state as any)?.from?.pathname || "/";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
