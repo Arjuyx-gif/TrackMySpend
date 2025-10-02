@@ -33,7 +33,7 @@ export default function LoginPage() {
     setLoading(true);
     try {
       demoLogin();
-      navigate("/");
+      navigate(from, { replace: true });
     } finally {
       setLoading(false);
     }
