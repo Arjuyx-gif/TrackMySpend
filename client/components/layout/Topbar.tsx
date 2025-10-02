@@ -9,7 +9,7 @@ export function Topbar() {
       <button className="p-2 rounded-md hover:bg-accent" onClick={() => setOpen(!open)} aria-label="Open menu">
         <Menu />
       </button>
-      <div className="font-extrabold tracking-tight">TrackMyFin</div>
+      <div className="font-extrabold tracking-tight">TrackMySpend</div>
       <div />
       {open && (
         <div className="fixed inset-0 z-50 bg-black/40" onClick={() => setOpen(false)}>
