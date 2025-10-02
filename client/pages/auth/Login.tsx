@@ -21,7 +21,7 @@ export default function LoginPage() {
     setLoading(true);
     try {
       await login(email.trim(), password);
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (err: any) {
       setError(err?.message || "Authentication failed");
     } finally {
