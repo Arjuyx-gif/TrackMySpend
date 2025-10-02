@@ -30,17 +30,19 @@ const App = () => (
           <BrowserRouter>
             <Layout>
               <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/accounts" element={<AccountsPage />} />
-                <Route path="/transactions" element={<Placeholder title="Transactions" />} />
-                <Route path="/budgets" element={<Placeholder title="Budgets" />} />
-                <Route path="/categories" element={<Placeholder title="Categories" />} />
-                <Route path="/entities" element={<Placeholder title="Entities" />} />
-                <Route path="/investments" element={<Placeholder title="Investments" />} />
-                <Route path="/stats" element={<Placeholder title="Stats" />} />
-                <Route path="/profile" element={<Placeholder title="Profile" />} />
                 <Route path="/auth/login" element={<LoginPage />} />
                 <Route path="/auth/signup" element={<SignupPage />} />
+
+                <Route path="/" element={<RequireAuth><Index /></RequireAuth>} />
+                <Route path="/accounts" element={<RequireAuth><AccountsPage /></RequireAuth>} />
+                <Route path="/transactions" element={<RequireAuth><Placeholder title="Transactions" /></RequireAuth>} />
+                <Route path="/budgets" element={<RequireAuth><Placeholder title="Budgets" /></RequireAuth>} />
+                <Route path="/categories" element={<RequireAuth><Placeholder title="Categories" /></RequireAuth>} />
+                <Route path="/entities" element={<RequireAuth><Placeholder title="Entities" /></RequireAuth>} />
+                <Route path="/investments" element={<RequireAuth><Placeholder title="Investments" /></RequireAuth>} />
+                <Route path="/stats" element={<RequireAuth><Placeholder title="Stats" /></RequireAuth>} />
+                <Route path="/profile" element={<RequireAuth><Placeholder title="Profile" /></RequireAuth>} />
+
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
