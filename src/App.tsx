@@ -24,7 +24,7 @@ function RequireAuth() {
 function App() {
   // Update the title
   useEffect(() => {
-    document.title = 'MoneyMap - Personal Finance Tracker';
+    document.title = 'TrackMySpend - Personal Finance Tracker';
   }, []);
   
   return (
