@@ -201,7 +201,7 @@ export const FinanceProvider: React.FC<{ children: React.ReactNode }> = ({ child
   // Helper to map _id to id for budgets
   const mapBudget = (budget: any): Budget => ({ ...budget, id: budget._id });
 
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
 
   // Load user data from backend on mount
   const fetchData = async () => {

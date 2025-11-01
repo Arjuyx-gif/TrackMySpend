@@ -103,9 +103,9 @@ cd C:\Users\krish\TrackMySpend\backend
 npm install
 
 # Create .env file (required)
-# Example content:
-# MONGO_URI="your-mongodb-connection-string"
-# PORT=5000  # optional, defaults to 5000
+# Copy from .env.example:
+cp .env.example .env
+# Then edit .env with your MongoDB URI and JWT secret
 
 npm run dev   # uses nodemon
 # or
@@ -114,6 +114,27 @@ npm start     # node server.js
 
 - API runs at http://localhost:5000 by default.
 - Routes are mounted under `/api`: `/api/transactions`, `/api/budgets`, `/api/reminders`, `/api/auth`, `/api/reset`.
+
+### 3) Run Both Together (Recommended)
+
+```powershell
+# Install dependencies first (frontend)
+npm install
+
+# Install backend dependencies
+cd backend && npm install && cd ..
+
+# Copy backend environment file
+cd backend && cp .env.example .env && cd ..
+# Edit backend/.env with your settings
+
+# Run both frontend and backend
+npx concurrently "npm run dev" "cd backend && npm run dev"
+```
+
+This will start:
+- Frontend at http://localhost:5173
+- Backend at http://localhost:5000
 
 ---
 
@@ -124,10 +145,21 @@ Frontend (from repo root):
 - `npm run build` — type-check + Vite production build
 - `npm run preview` — preview the production build locally
 - `npm run lint` — run eslint
+- `npx concurrently "npm run dev" "cd backend && npm run dev"` — run both frontend and backend
 
 Backend (from `backend/`):
 - `npm run dev` — start API with nodemon (auto reload)
 - `npm start` — start API with node
+- `npm run prod` — start API in production mode
+
+Quick commands:
+```powershell
+# Development (both servers)
+npx concurrently "npm run dev" "cd backend && npm run dev"
+
+# Production build and preview
+npm run build && npx concurrently "npm run preview" "cd backend && npm start"
+```
 
 ---
 
@@ -138,10 +170,17 @@ Create `backend/.env` with at least:
 ```
 MONGO_URI="mongodb+srv://<user>:<pass>@cluster.mongodb.net/<db>?retryWrites=true&w=majority"
 PORT=5000
+JWT_SECRET="your-super-secure-jwt-secret-change-this-in-production"
+NODE_ENV=development
 ```
 
-Notes:
-- `backend/routes/auth.js` currently uses a hardcoded demo JWT secret (`supersecretkey`). For any real deployment, switch to an environment-based secret and hash passwords (e.g., bcrypt).
+Use the provided `backend/.env.example` as a template.
+
+**Security Notes:**
+- ✅ Passwords are now hashed with bcrypt
+- ✅ JWT secret is configurable via environment variable
+- ✅ Input validation added to registration and login
+- ⚠️ For production: Change JWT_SECRET, use strong MongoDB credentials, enable CORS for specific domains only
 
 ---
 
@@ -187,16 +226,67 @@ npm run preview
 - Cannot connect to MongoDB:
 	- Verify `MONGO_URI` in `backend/.env`.
 	- Check firewall/VPN and that your IP is allowlisted in MongoDB Atlas.
+	- Copy from `backend/.env.example` if `.env` doesn't exist.
 
 - Port already in use:
 	- Change backend `PORT` in `backend/.env`.
 	- For Vite, you can start on a different port with `npm run dev -- --port 5174`.
 
+- `'concurrently' is not recognized`:
+	- Use `npx concurrently` instead of global installation.
+	- Or install globally: `npm install -g concurrently`.
+
+- Authentication not working:
+	- Check if backend is running and accessible.
+	- Verify API_BASE_URL in frontend matches backend URL.
+	- Check browser network tab for CORS errors.
+
+- Sign up option missing:
+	- ✅ Fixed! Login page now has "Sign up here" link.
+	- ✅ Register page has "Sign in here" link.
+
+## 🚀 Ready for Deployment?
+
+See `DEPLOYMENT.md` for complete deployment guide including:
+- Vercel + Railway setup
+- Environment variable configuration
+- Security checklist
+- Production optimization tips
+
 ---
 
 ## 📌 Notes
 
-- This project is for educational/demo purposes. If deploying, add secure JWT handling and password hashing, and configure CORS and production builds appropriately.
+- ✅ **Security Improved**: Password hashing, JWT environment variables, input validation
+- ✅ **Better UX**: Sign up/in navigation links, improved error messages
+- ✅ **Development**: One-command startup for both servers
+- ✅ **Production Ready**: Deployment guide, environment templates
+- ⚠️ **For Production**: Follow `DEPLOYMENT.md` security checklist
+
+## 🔗 What's New
+
+### Recent Improvements:
+1. **Authentication Flow Fixed**
+   - Added "Sign up here" link on login page
+   - Added "Sign in here" link on register page
+   - Better error handling and user feedback
+
+2. **Security Enhancements**
+   - Password hashing with bcrypt
+   - Environment-based JWT secrets
+   - Input validation for registration/login
+   - Better error messages without exposing sensitive info
+
+3. **Developer Experience**
+   - One command to run both frontend and backend
+   - Environment file templates
+   - Improved backend API documentation page
+   - Production deployment guide
+
+4. **Production Ready**
+   - Environment configuration
+   - Security best practices
+   - Deployment instructions for multiple platforms
 
 
 
