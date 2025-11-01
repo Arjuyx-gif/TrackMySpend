@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useFinance } from '@/context/FinanceContext';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -83,6 +83,19 @@ export default function Login() {
               {loading ? 'Signing in...' : 'Sign In'}
             </Button>
           </form>
+          
+          <div className="mt-6 text-center">
+            <p className="text-sm text-muted-foreground">
+              Don't have an account?{' '}
+              <Button 
+                variant="link" 
+                className="p-0 h-auto text-primary"
+                onClick={() => navigate('/register')}
+              >
+                Sign up here
+              </Button>
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>
