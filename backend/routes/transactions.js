@@ -3,7 +3,7 @@ const router = express.Router();
 const Transaction = require('../models/Transaction');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = 'supersecretkey'; // Should match the one in auth.js
+const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey'; // Use env variable
 
 // Middleware to check JWT and set req.userId
 function requireAuth(req, res, next) {
