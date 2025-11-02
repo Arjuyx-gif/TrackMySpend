@@ -2,15 +2,18 @@
 
 A comprehensive personal finance management application built with React, TypeScript, Node.js, and MongoDB.
 
+🌐 **Live Demo**: [https://track-my-spend.netlify.app](https://track-my-spend.netlify.app)
+
 ## 🚀 Features
 
-- Transaction Management: Track income and expenses with categories
-- Budget Planning: Set and monitor monthly budgets
-- Smart Insights: AI-powered financial insights and recommendations
-- Calendar View: Visualize financial activities over time
-- Reminders: Set up bill reminders and recurring payments
-- Data Export: Export your financial data in various formats
-- Responsive Design: Works on desktop and mobile devices
+- **Transaction Management**: Track income and expenses with categories
+- **Budget Planning**: Set and monitor monthly budgets with smart suggestions
+- **Smart Insights**: AI-powered financial insights and recommendations
+- **Calendar View**: Visualize financial activities over time
+- **Reminders**: Set up bill reminders and recurring payments
+- **Data Export**: Export your financial data in various formats
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Secure Authentication**: Bcrypt password hashing and JWT token management
 
 ## 🛠️ Tech Stack
 
