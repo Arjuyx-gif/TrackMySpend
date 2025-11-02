@@ -8,7 +8,10 @@ import {
   TransactionType
 } from '@/types';
 
-// Default categories
+/**
+ * Default categories for transactions and budgets
+ * These provide a comprehensive set of common expense and income categories
+ */
 const DEFAULT_CATEGORIES = [
   "Housing", "Transportation", "Food", "Utilities", 
   "Insurance", "Healthcare", "Savings", "Debt", 
@@ -16,7 +19,10 @@ const DEFAULT_CATEGORIES = [
   "Income", "Investments", "Other"
 ];
 
-// Initial user settings
+/**
+ * Initial user settings with sensible defaults
+ * Provides a starting point for new users while maintaining flexibility
+ */
 const DEFAULT_SETTINGS: UserSettings = {
   currency: "USD",
   startDayOfMonth: 1,
