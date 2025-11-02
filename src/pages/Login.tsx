@@ -89,7 +89,7 @@ export default function Login() {
               Don't have an account?{' '}
               <Button 
                 variant="link" 
-                className="p-0 h-auto text-primary"
+                className="p-0 h-auto text-[aliceblue]"
                 onClick={() => navigate('/register')}
               >
                 Sign up here
