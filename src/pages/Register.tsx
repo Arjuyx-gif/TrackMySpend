@@ -78,13 +78,13 @@ export default function Register() {
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
               Already have an account?{' '}
-              <Button 
+                <Button 
                 variant="link" 
-                className="p-0 h-auto text-primary"
+                className="p-0 h-auto text-[aliceblue]"
                 onClick={() => navigate('/login')}
-              >
+                >
                 Sign in here
-              </Button>
+                </Button>
             </p>
           </div>
         </CardContent>
