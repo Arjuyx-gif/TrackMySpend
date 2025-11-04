@@ -15,7 +15,7 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:all": "npm run test:run && cd backend && npm test",
-    "test:frontend": "vitest run",
+    "test:frontend": "vitest run src/",
     "test:backend": "cd backend && npm test",
     "validate": "npm run lint && npm run test:run && npm run build",
     "deploy": "npm run validate && netlify deploy --prod"
