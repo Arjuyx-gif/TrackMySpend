@@ -14,7 +14,11 @@
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:all": "npm run test:run && cd backend && npm test"
+    "test:all": "npm run test:run && cd backend && npm test",
+    "test:frontend": "vitest run",
+    "test:backend": "cd backend && npm test",
+    "validate": "npm run lint && npm run test:run && npm run build",
+    "deploy": "npm run validate && netlify deploy --prod"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
