@@ -248,9 +248,40 @@ npm run preview
 	- ✅ Fixed! Login page now has "Sign up here" link.
 	- ✅ Register page has "Sign in here" link.
 
+---
+
+## 📁 Project Structure
+
+```
+TrackMySpend/
+├── docs/                      # Documentation files
+│   ├── CHANGELOG.md          # Version history
+│   ├── CONTRIBUTING.md       # Contribution guidelines
+│   ├── DEPLOYMENT.md         # Deployment guide
+│   ├── SECURITY.md           # Security policy
+│   └── TESTING.md            # Testing guide
+├── scripts/                   # Development scripts
+│   ├── start-dev.bat         # Windows batch script
+│   └── start-dev.ps1         # PowerShell script
+├── src/                       # Frontend source code
+│   ├── components/           # React components
+│   ├── pages/                # Page components
+│   ├── context/              # React context
+│   ├── hooks/                # Custom hooks
+│   ├── lib/                  # Utilities
+│   └── test/                 # Frontend tests
+├── backend/                   # Backend source code
+│   ├── models/               # Mongoose models
+│   ├── routes/               # API routes
+│   └── test/                 # Backend tests
+├── .github/workflows/        # CI/CD workflows
+├── package.json              # Frontend dependencies
+└── README.md                 # This file
+```
+
 ## 🚀 Ready for Deployment?
 
-See `DEPLOYMENT.md` for complete deployment guide including:
+See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for complete deployment guide including:
 - Vercel + Railway setup
 - Environment variable configuration
 - Security checklist
@@ -264,7 +295,15 @@ See `DEPLOYMENT.md` for complete deployment guide including:
 - ✅ **Better UX**: Sign up/in navigation links, improved error messages
 - ✅ **Development**: One-command startup for both servers
 - ✅ **Production Ready**: Deployment guide, environment templates
-- ⚠️ **For Production**: Follow `DEPLOYMENT.md` security checklist
+- ⚠️ **For Production**: Follow [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) security checklist
+
+## 📚 Documentation
+
+- 📖 [Testing Guide](docs/TESTING.md) - Comprehensive testing documentation
+- 🚀 [Deployment Guide](docs/DEPLOYMENT.md) - Production deployment instructions
+- 🤝 [Contributing Guidelines](docs/CONTRIBUTING.md) - How to contribute
+- 🔒 [Security Policy](docs/SECURITY.md) - Security and vulnerability reporting
+- 📋 [Changelog](docs/CHANGELOG.md) - Version history and updates
 
 ## 🔗 What's New
 
