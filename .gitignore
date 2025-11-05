@@ -35,3 +35,18 @@ tsconfig.tsbuildinfo
 
 # OS
 Thumbs.db
+.DS_Store
+
+# Development files (hide from repository)
+dailypush.txt
+start-dev.bat
+start-dev.ps1
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Build artifacts
+build/
+.cache/
