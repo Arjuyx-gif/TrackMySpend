@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useFinance } from '@/context/FinanceContext';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003np';
 
 export default function Login() {
   const [email, setEmail] = useState('');

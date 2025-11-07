@@ -49,7 +49,7 @@ const initialState: FinanceState = {
   reminders: [],
   settings: DEFAULT_SETTINGS,
   chatHistory: [],
-  loading: false,
+  loading: undefined
 };
 
 // Action types
