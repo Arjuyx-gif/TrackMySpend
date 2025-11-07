@@ -3,7 +3,7 @@ const router = express.Router();
 const Reminder = require('../models/Reminder');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = 'supersecretkey';
+const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey';
 
 function requireAuth(req, res, next) {
   const authHeader = req.headers.authorization;

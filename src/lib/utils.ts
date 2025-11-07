@@ -323,14 +323,14 @@ export function generateAIResponse(question: string, state: any): string {
         return acc;
       }, {} as Record<string, number>);
 
-    const sorted = Object.entries(expensesByCategory).sort(([, a], [, b]) => b - a);
+    const sorted = Object.entries(expensesByCategory).sort(([, a], [, b]) => (b as number) - (a as number));
     const [category, amount] = sorted[0] || [];
 
     if (!category) {
       return "Try categorizing your expenses so I can give you more actionable insights.";
     }
 
-    return `Your top expense category last month was ${category} at ${formatCurrency(amount)}. Consider setting a budget limit for this category to control your spending.`;
+    return `Your top expense category last month was ${category} at ${formatCurrency(amount as number)}. Consider setting a budget limit for this category to control your spending.`;
   }
 
   return "I'm not sure how to answer that question. Try asking about your food spending, savings rate, budget, bills, or ways to improve.";

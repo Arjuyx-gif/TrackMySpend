@@ -20,7 +20,7 @@ import {
 import { downloadJSON, downloadCSV, requestNotificationPermission } from "@/lib/utils";
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
 
 export function SettingsForm() {
   const { state, updateSettings, exportData, importData, resetAllUserData } = useFinance();

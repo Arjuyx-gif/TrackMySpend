@@ -20,7 +20,7 @@ const sidebarItems = [
   { name: "Reminders", path: "/reminders", icon: BellIcon },
   { name: "Calendar", path: "/calendar", icon: CalendarIcon },
   { name: "Smart Budget", path: "/smart-budget", icon: BrainCircuitIcon },
-  { name: "Coming Soon", path: "/ask", icon: MessageSquareIcon },
+  { name: "Ask MoneyMap", path: "/ask", icon: MessageSquareIcon },
   { name: "Settings", path: "/settings", icon: SettingsIcon },
 ];
 

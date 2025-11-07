@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 .env
+.env.local
+.env.production.local
 
 # Editor directories and files
 .vscode/*
@@ -23,3 +25,28 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local Netlify folder
+.netlify
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Development files (hide from repository)
+dailypush.txt
+start-dev.bat
+start-dev.ps1
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Build artifacts
+build/
+.cache/

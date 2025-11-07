@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -74,6 +74,19 @@ export default function Register() {
               {loading ? 'Registering...' : 'Register'}
             </Button>
           </form>
+          
+          <div className="mt-6 text-center">
+            <p className="text-sm text-muted-foreground">
+              Already have an account?{' '}
+                <Button 
+                variant="link" 
+                className="p-0 h-auto text-[aliceblue]"
+                onClick={() => navigate('/login')}
+                >
+                Sign in here
+                </Button>
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>

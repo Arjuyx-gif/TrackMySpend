@@ -3,7 +3,7 @@ const router = express.Router();
 const Budget = require('../models/Budget');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = '99d24a92d9018c34aa273e27aa3442a0fb886e0dc1f6215273445ac6e3b7bf7e';
+const JWT_SECRET = process.env.JWT_SECRET || '99d24a92d9018c34aa273e27aa3442a0fb886e0dc1f6215273445ac6e3b7bf7e';
 
 function requireAuth(req, res, next) {
   const authHeader = req.headers.authorization;

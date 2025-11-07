@@ -83,6 +83,19 @@ export default function Login() {
               {loading ? 'Signing in...' : 'Sign In'}
             </Button>
           </form>
+          
+          <div className="mt-6 text-center">
+            <p className="text-sm text-muted-foreground">
+              Don't have an account?{' '}
+              <Button 
+                variant="link" 
+                className="p-0 h-auto text-[aliceblue]"
+                onClick={() => navigate('/register')}
+              >
+                Sign up here
+              </Button>
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>
